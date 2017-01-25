@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
-
+cezar(char** klucze);
 //odszyfruj(int przesun,char kontener);
 int main()
 {   int p=0;
@@ -19,7 +19,7 @@ int main()
     //srand(time(NULL));
     //n=rand()%11-5;
 
-// TWORZÊ KOPIÊ PLIKU ORYGINAL I SZYFR
+// TWORZÊ KOPIÊ PLIKU ORYGINAL I SZYFR #CEZAR
     for(int i=0; i<=127; i++){
         fscanf(oryginal, "%c", &kontener);
         printf("%c", kontener);
@@ -109,7 +109,7 @@ printf("\n \n wypisz: \n");
 
 
 
-    //odszyfruj(kontener, )
+    odszyfruj(kontener, )
 
 
     /*
