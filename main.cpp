@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <time.h>
 
-odszyfruj(int przesun,char kontener);
+//odszyfruj(int przesun,char kontener);
 int main()
 {   int p=0;
     int q=0;
@@ -16,10 +16,10 @@ int main()
     FILE *kopia=fopen("kopia.txt", "wt");
     FILE *szyfr=fopen("szyfr.txt", "wt");
 
-    //srand(time(NULL)); huj ci w dupe
+    //srand(time(NULL));
     //n=rand()%11-5;
 
-// TWORZÊ KOPIÊ PLIKU ORYGINAL
+// TWORZÊ KOPIÊ PLIKU ORYGINAL I SZYFR
     for(int i=0; i<=127; i++){
         fscanf(oryginal, "%c", &kontener);
         printf("%c", kontener);
@@ -109,7 +109,7 @@ printf("\n \n wypisz: \n");
 
 
 
-    odszyfruj(kontener, )
+    //odszyfruj(kontener, )
 
 
     /*
