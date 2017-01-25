@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
-cezar(char kontener);
+char cezar(char kontener);
 //odszyfruj(int przesun,char kontener);
 int main()
 {   int p=0;
@@ -64,7 +64,6 @@ int main()
 
     p=0;
     q=0;
-
 // SPRAWDZAM ZAWARTOŒÆ TABLICY KLUCZE
 printf("\n \n wypisz: \n");
 
@@ -94,11 +93,6 @@ printf("\n \n wypisz: \n");
         p++;
     }
        printf("\n---- \n");
-
-
-
-
-
 // ZAMYKAM SZYFR I KOPIÊ I OTWIERAM W TRYBIE READ
     printf("\n");
     fclose(szyfr);
@@ -106,32 +100,15 @@ printf("\n \n wypisz: \n");
     kopia=fopen("kopia.txt", "r");
     szyfr=fopen("szyfr.txt", "r");
 
-
-
-
-
-
-
-
     odszyfruj(kontener, )
-
-
     /*
     for(int i=0; i<=100; i++)
     {   if()
         fscanf(szyfr, "%c", &kontener);
 
-
-
-
-
-
     }
 
     */
-
-
-
 /*
 //zawijanie dookola alfabetu:
 przesun = przesun % ('Z' - 'A');//zeby nie wyjechac dalej niz trzeba
@@ -143,32 +120,12 @@ if (znak < 'A')
 if (znak > 'Z')
 	znak -= 'Z' - 'A';
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
 // SPRAWDZAM ZAWARTOŒÆ SZYFR.TXT
        for(int i=0; i<=127; i++){
        fscanf(szyfr, "%c", &kontener);
         printf("%c", kontener);
        }
        printf("\n");
-
-
-
-
-
-
-
 
        fclose(szyfr);
        fclose(oryginal);
@@ -180,15 +137,16 @@ return 0;
 }
 char cezar(char kontener, int przesun){
 
-if(kontener<='Z'&&kontener>='A'){
-    przesun = przesun % ('Z' - 'A');
+        if(kontener<='Z'&&kontener>='A'){
+        przesun = przesun % ('Z' - 'A');
 
-    if (kontener < 'A')
-	kontener += 'Z' - 'A';
-if (kontener > 'Z')
-	kontener -= 'Z' - 'A';
+        if (kontener < 'A')
+        kontener += 'Z' - 'A';
+        if (kontener > 'Z')
+	    kontener -= 'Z' - 'A';
 
-    return kontener;
+
+return kontener;
 
 }
 
