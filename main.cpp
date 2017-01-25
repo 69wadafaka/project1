@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
-char cezar(char kontener);
-//odszyfruj(int przesun,char kontener);
+char cezar(char kontener, char przesun);
+char odszyfruj(int przesun,char kontener);
 int main()
 {   int p=0;
     int q=0;
@@ -11,6 +11,7 @@ int main()
     int przesun=0;
     char kontener;
     char klucze[10][10];
+    char oryginaltab[20][10];
     FILE *oryginal=fopen("oryginal.txt", "r");
     FILE *klucz=fopen("klucz.txt", "r");
     FILE *kopia=fopen("kopia.txt", "wt");
@@ -19,7 +20,7 @@ int main()
     //srand(time(NULL));
     //n=rand()%11-5;
 
-// TWORZÊ KOPIÊ PLIKU ORYGINAL I SZYFR #CEZAR
+// TWORZÃŠ KOPIÃŠ PLIKU ORYGINAL I SZYFR #CEZAR
     for(int i=0; i<=127; i++){
         fscanf(oryginal, "%c", &kontener);
         printf("%c", kontener);
@@ -33,8 +34,36 @@ int main()
     }
     printf("\n");
     printf("\n");
+//ZAPISUJÄ˜ TEKST ORYGINAL DO TABLICY
+ while(p<20)
+    {
+        while (q<10)
+        {
+        fscanf(oryginaltab, "%c", &oryginal[p][q]);
+        if(oryginaltab[p][q]!='#')
+       printf("%c", oryginaltab[p][q]);
 
-//ZAPISUJÊ DO TABLICY S£OWA - KLUCZE
+        if (oryginaltab[p][q] == '#')
+        {
+            p=11;
+            break;
+        }
+        if(oryginaltab[p][q]==32)
+        {
+        oryginaltab[p][q]=0;
+        q=0;
+        break;
+        }
+        else
+        {
+        q++;
+        }
+        }
+        p++;
+    }
+
+
+//ZAPISUJÃŠ DO TABLICY SÂ£OWA - KLUCZE
     while(p<10)
     {
         while (q<10)
@@ -64,7 +93,7 @@ int main()
 
     p=0;
     q=0;
-// SPRAWDZAM ZAWARTOŒÆ TABLICY KLUCZE
+// SPRAWDZAM ZAWARTOÅ’Ã† TABLICY KLUCZE
 printf("\n \n wypisz: \n");
 
  while(p<10)
@@ -93,14 +122,14 @@ printf("\n \n wypisz: \n");
         p++;
     }
        printf("\n---- \n");
-// ZAMYKAM SZYFR I KOPIÊ I OTWIERAM W TRYBIE READ
+// ZAMYKAM SZYFR I KOPIÃŠ I OTWIERAM W TRYBIE READ
     printf("\n");
     fclose(szyfr);
     fclose(kopia);
     kopia=fopen("kopia.txt", "r");
     szyfr=fopen("szyfr.txt", "r");
 
-    odszyfruj(kontener, )
+    odszyfruj(kontener, przesun);
     /*
     for(int i=0; i<=100; i++)
     {   if()
@@ -120,7 +149,7 @@ if (znak < 'A')
 if (znak > 'Z')
 	znak -= 'Z' - 'A';
 */
-// SPRAWDZAM ZAWARTOŒÆ SZYFR.TXT
+// SPRAWDZAM ZAWARTOÅ’Ã† SZYFR.TXT
        for(int i=0; i<=127; i++){
        fscanf(szyfr, "%c", &kontener);
         printf("%c", kontener);
