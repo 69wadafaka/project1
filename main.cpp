@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
-cezar(char** klucze);
+cezar(char kontener);
 //odszyfruj(int przesun,char kontener);
 int main()
 {   int p=0;
@@ -23,8 +23,12 @@ int main()
     for(int i=0; i<=127; i++){
         fscanf(oryginal, "%c", &kontener);
         printf("%c", kontener);
+
+
         fprintf(kopia, "%c", kontener);
         kontener=kontener+n;
+
+
         fprintf(szyfr, "%c", kontener);
     }
     printf("\n");
@@ -128,7 +132,17 @@ printf("\n \n wypisz: \n");
 
 
 
+/*
+//zawijanie dookola alfabetu:
+przesun = przesun % ('Z' - 'A');//zeby nie wyjechac dalej niz trzeba
 
+char znak;//duza litera
+
+if (znak < 'A')
+	znak += 'Z' - 'A';
+if (znak > 'Z')
+	znak -= 'Z' - 'A';
+*/
 
 
 
@@ -164,7 +178,31 @@ printf("\n \n wypisz: \n");
 
 return 0;
 }
+char cezar(char kontener, int przesun){
 
+if(kontener<='Z'&&kontener>='A'){
+    przesun = przesun % ('Z' - 'A');
+
+    if (kontener < 'A')
+	kontener += 'Z' - 'A';
+if (kontener > 'Z')
+	kontener -= 'Z' - 'A';
+
+    return kontener;
+
+}
+
+
+
+
+
+
+return kontener;
+
+
+
+
+}
 
 
 
