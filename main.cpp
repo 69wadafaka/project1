@@ -16,7 +16,7 @@ int main()
     FILE *kopia=fopen("kopia.txt", "wt");
     FILE *szyfr=fopen("szyfr.txt", "wt");
 
-    //srand(time(NULL));
+    //srand(time(NULL)); huj ci w dupe
     //n=rand()%11-5;
 
 // TWORZÊ KOPIÊ PLIKU ORYGINAL
