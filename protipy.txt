@@ -7,3 +7,12 @@ if (znak < 'A')
 	znak += 'Z' - 'A';
 if (znak > 'Z')
 	znak -= 'Z' - 'A';
+
+-wczytuj sobie pojedyncze slowa jako wiersze tabeli
+-napisz sobie funkcje ktora porownuje ze soba dwa slowa
+	bool toSamo(char* tekst1, char* tekst2);
+	jak pierwsza litera sie zgadza to lec dalej, jak nie to return false i jak cale slowo sie zgadza return true
+	uruchamiasz np toSamo(&klucz[10][0], &szyfr[2][0]) //podajesz wskazniki do pierwszej litery wyrazu 10 klucza, i 2 slowa szyfru
+-po kazdym porownaniu kazdego slowa szyfru z kazdym kluczem caly tekst szyfrowany przesun cezarem o 1
+	lecisz tak przez kazda kombinacje slowa z kluczem az za ktoryms razem toSamo zwroci true
+-znalazles klucz
